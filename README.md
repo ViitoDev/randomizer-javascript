@@ -29,7 +29,7 @@ Then double-click `index.html` or serve the folder with any static server.
 ## Project Structure
 
 ```
-sorteador-numeros/
+randomizer/
 ├── app.js        # randomizer logic
 ├── index.html    # markup
 ├── style.css     # styling
