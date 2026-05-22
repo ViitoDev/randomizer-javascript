@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Randomizer · random numbers</title>
+</head>
+
+<body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+
+    <main class="card">
+        <header class="card__header">
+            <span class="badge">v1.0 · random</span>
+            <h1 class="card__title">Randomizer<span class="card__title-accent">.</span></h1>
+            <p class="card__subtitle">Pick a range, set the quantity and let luck decide.</p>
+        </header>
+
+        <form class="form" onsubmit="event.preventDefault(); randomize();">
+            <div class="form__row">
+                <label class="field">
+                    <span class="field__label">Quantity</span>
+                    <input class="field__input" id="quantity" type="number" min="1" placeholder="E.g.: 5">
+                </label>
+            </div>
+
+            <div class="form__row form__row--double">
+                <label class="field">
+                    <span class="field__label">From</span>
+                    <input class="field__input" id="from" type="number" placeholder="0">
+                </label>
+                <label class="field">
+                    <span class="field__label">To</span>
+                    <input class="field__input" id="to" type="number" placeholder="100">
+                </label>
+            </div>
+
+            <div class="actions">
+                <button type="submit" id="btn-draw" class="btn btn--primary">
+                    <span>Draw</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </button>
+                <button type="button" onclick="restart()" id="btn-restart" class="btn btn--ghost" disabled>Reset</button>
+            </div>
+        </form>
+
+        <section class="result" id="results" aria-live="polite">
+            <span class="result__label">Result</span>
+            <p class="result__empty">No numbers drawn yet.</p>
+            <ul class="result__list" id="result-list" hidden></ul>
+        </section>
+    </main>
+
+    <footer class="footer">made by João Victor · 2026</footer>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>
