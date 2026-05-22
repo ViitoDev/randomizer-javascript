@@ -21,7 +21,7 @@ Clone the repository and open `index.html` in your browser:
 
 ```bash
 git clone <repo-url>
-cd sorteador-numeros
+cd (paste name)
 ```
 
 Then double-click `index.html` or serve the folder with any static server.
